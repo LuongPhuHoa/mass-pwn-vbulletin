@@ -3,11 +3,23 @@ Identify vulnerable (RCE) vBulletin 5.0.0 - 5.5.4 instances using Shodan (CVE-20
 
 ![Bulletin](https://raw.githubusercontent.com/Frint0/mass-pwn-vbulletin/master/vbulletin.png)
 
-![Demo](https://raw.githubusercontent.com/Frint0/mass-pwn-vbulletin/master/demo-cli.png)
+![Demo](https://raw.githubusercontent.com/Frint0/mass-pwn-vbulletin/master/demo.png)
+
+## Requirements:
+
+* Python >= 3.5.3
+* asyncio >= 3.4.3
+* aiohttp >= 3.6.1
+* ipaddress
+* termcolor >= 1.1.0
+* tqdm >= 4.36
+* pyfiglet
+* click >= 7.0
+* IPy >= 1.0
 
 ## Gathering Hosts:
 
-This tool simply iterates over hosts on port 443 and 80 and runs a PoC to test if they are vulnerable to RCE. You can use Shodan to gather potential targets:
+This tool iterates over hosts on port 443 and 80 and runs a PoC to test if they are vulnerable to RCE. You can use Shodan to gather potential targets:
 
 ```
 shodan download vbullet-443 'html:"vbulletin" port:443'
@@ -15,9 +27,6 @@ shodan parse vbullet-443.json.gz --fields ip_str > vbullet-443
 shodan download vbullet-80 'html:"vbulletin" port:80'
 shodan parse vbullet-80.json.gz --fields ip_str > vbullet-80
 ```
-
-*By default I provide both host files with 1k hosts each for those of you without a Shodan API key! 😄*
-
 
 ## Special Thanks:
 
