@@ -34,6 +34,8 @@ def exploit(hostfile, outfile, command):
 							tqdm.tqdm.write(colored('URL: ', 'white' ) + colored(url, 'red'))
 							tqdm.tqdm.write(colored('Response: ', 'white' ) + colored(response2, 'red'))	
 				return response
+		except KeyboardInterrupt:
+			sys.exit("\nClosing...")
 		except:
 			pass
 
