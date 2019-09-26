@@ -19,7 +19,7 @@ Identify vulnerable (RCE) vBulletin 5.0.0 - 5.5.4 instances using Shodan (CVE-20
 
 ## Gathering Hosts:
 
-This tool iterates over hosts on port 443 and 80 and runs a PoC to test if they are vulnerable to RCE. You can use Shodan to gather potential targets:
+This tool iterates over hosts on port 443 and 80 and runs a PoC to test if they are vulnerable to CVE-2019-16759. You can use Shodan to gather potential targets:
 
 ```
 shodan download vbullet-443 'html:"vbulletin" port:443'
